@@ -1,0 +1,160 @@
+[bar/redvisionsbar]
+ 
+override-redirect = false
+bottom = false
+fixed-center = true
+ 
+line-size = 2
+line-color = #3b239b
+ 
+;width =
+;height =
+ 
+background = #000000
+foreground = #f8f8f8
+ 
+font-0 = "Terminus (TTF):size=12"
+ 
+modules-left = leftbrack i3 rightbrack sep pulseaudio sep title sep 
+modules-center = date
+modules-right =  sep2 memory sep2 cpu sep2 wireless-network
+ 
+[module/decor-glyph]
+type = custom/text
+content-foreground = #f8f8f8
+margin = 0
+
+[module/leftbrack]
+inherit = module/decor-glyph
+content = "["
+content-padding = 1
+
+[module/rightbrack]
+inherit = module/decor-glyph
+content = "]"
+content-padding = 1
+ 
+[module/sep]
+inherit = module/decor-glyph
+content = "/"
+content-padding = 2
+ 
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+padding-left = 1
+ 
+label-mode = %mode%
+label-mode-padding = 0
+label-mode-background = #000000
+ 
+label-focused = %index%
+label-focused-foreground = #f8f8f8
+label-focused-background = #000000
+label-focused-underline = #5d0a5d
+label-focused-padding = 0
+ 
+label-unfocused = %index%
+label-unfocused-padding = 0
+ 
+label-separator = | 
+label-separator-padding = 1
+label-separator-foreground = #f8f8f8
+ 
+[module/pulseaudio]
+type = internal/pulseaudio
+ 
+sink = alsa_output.pci-0000_12_00.3.analog-stero
+use-ui-max = true
+interval = 5
+ 
+format-volume = <label-volume>
+label-volume = [VOL] %percentage%%
+label-volume-underline = #5d0a5d
+
+format-muted = <label-muted>
+label-muted = [MUTE]
+label-muted-underline = #5d0a5d
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-background = #000000
+format-foreground = #f8f8f8
+format-padding = 0
+
+label = %title%
+label-maxlen = 50
+label-underline = #5d0a5d
+
+label-empty = " "
+ 
+[module/date]
+type = internal/date
+ 
+interval = 1.0
+date = %m-%d-%Y%
+time = %H:%M
+ 
+format = <label>
+label = %time% | %date%
+label-underline = #5d0a5d
+ 
+label-foreground = #f8f8f8
+ 
+[module/sep2]
+inherit = module/decor-glyph
+content = "\"
+content-padding = 2
+ 
+#[module/battery]
+#type = internal/battery
+#full-at = 69%
+#battery = BAT0
+#adapter = AC
+ 
+#format-charging = <label-charging>
+#format-discharging = <label-discharging> 
+
+#label-charging = [BAT] Charging: %percentage%%
+#label-charging-underline = #5d0a5d
+
+#label-discharging = [BAT] %percentage%%
+#label-discharging-underline = #5d0a5d 
+
+#poll-interval = 5
+ 
+[module/memory]
+type = internal/memory
+interval = 3
+ 
+format = <label>
+label = [MEM] %gb_used%/%gb_total%
+label-underline = #5d0a5d
+ 
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+ 
+format = <label>
+label = [CPU] %percentage%%
+label-underline = #5d0a5d
+
+[module/wireless-network]
+type = internal/network
+interface = wlp7s0
+ 
+interval = 3.0
+ 
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+ 
+label-connected = "%local_ip% @ %essid% "
+label-connected-foreground = #f8f8f8
+label-connected-underline = #5d0a5d
+ 
+label-disconnected = "offline"
+label-disconnected-foreground = #7c7c7c
+label-disconnected-underline = #5d0a5d
+

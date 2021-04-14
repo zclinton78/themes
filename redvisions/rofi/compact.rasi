@@ -3,7 +3,7 @@
     active-foreground: @foreground;
     normal-background: @background;
     normal-foreground: @foreground;
-    urgent-background: #15AE15;
+    urgent-background: #000000;
     urgent-foreground: @foreground;
  
     alternate-active-background: @background;
@@ -13,17 +13,17 @@
     alternate-urgent-background: @background;
     alternate-urgent-foreground: @foreground;
  
-    selected-active-background: #15AE15;
-    selected-active-foreground: @foreground;
-    selected-normal-background: #259825;
-    selected-normal-foreground: @foreground;
-    selected-urgent-background: #2BB02B;
-    selected-urgent-foreground: @foreground;
+    selected-active-background: #5d0a5d;
+    selected-active-foreground: #f8f8f8;
+    selected-normal-background: #5d0a5d;
+    selected-normal-foreground: #f8f8f8;
+    selected-urgent-background: #5d0a5d;
+    selected-urgent-foreground: #f8f8f8;
  
     background-color: @background;
-    background: #0e072b;
-    foreground: #e4b2da;
-    border-color: #e4b2da;
+    background: #000000;
+    foreground: #f8f8f8;
+    border-color: #5d0a5d;
     spacing: 2;
     font: "Terminus (TTF) 12";
 }
@@ -31,16 +31,16 @@
 #window {
     background-color: @background;
     border: 1px;
-    border-color: #e4b2da;
+    border-color: #5d0a5d;
     padding: 25px;
  
     /* position */ 
     x-offset: -40px;
-    y-offset: -230px;
+    y-offset: -280px;
     location: east;
  
-    width: 270px;
-    height: 200px;
+    width: 250px;
+    height: 300px;
 }
  
 sidebar {
@@ -68,13 +68,13 @@ sidebar {
     expand: false;
     str: ":";
     margin: 0px 0.3em 0em 0em;
-    text-color: @normal-foreground;
+    text-color: #f8f8f8;
 }
  
 #listview {
     fixed-height: 0;
     border: 2px 0px 0px;
-    border-color: @border-color;
+    border-color: #f8f8f8;
     spacing: 2px;
     scrollbar: true;
     padding: 2px 0px 0px;
@@ -153,7 +153,7 @@ sidebar {
  
 #inputbar {
     spacing: 0;
-    text-color: @normal-foreground;
+    text-color: #f8f8f8;
     padding: 1px;
 }
  
@@ -169,5 +169,5 @@ sidebar {
  
 #prompt {
     spacing: 0;
-    text-color: @normal-foreground;
+    text-color: #f8f8f8;
 }
